@@ -2,18 +2,20 @@
 Our project for the 2022-2023 Cloud Computing exam at Sapienza University.
 
 # to-do
-- Scheletro front-end
-- 
+- front-end
+- DynamoDB
+- REST api
+
 ### Frontpage
 - barra di ricerca
 - bottone login
 - carosello eventi
 - categorie (?)
-- 
+  
 ### Login
 - email
 - password
-- 
+  
 ### Evento
 - pagina legata al singolo evento
 - NO scegli posto, tutto automatico
