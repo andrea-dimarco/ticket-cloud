@@ -5,5 +5,6 @@ Our project for the 2022-2023 Cloud Computing exam at Sapienza University.
 - Scheletro front-end
 - Decidere quali pagine mettere
 - Frontpage: barra di ricerca; bottone login; carosello eventi; categorie (?)
-- Catalogo:
-- Login: 
+- Login: email; password;
+- Evento: pagina legata al singolo evento; NO scegli posto, tutto automatico; Numero posti disponibili; NOme; Descrizione; Data ora; Prezzo (GRATIS); Sconto; 
+- 
