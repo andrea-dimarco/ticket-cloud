@@ -37,4 +37,4 @@ Our project for the 2022-2023 Cloud Computing exam at Sapienza University.
 ### Get
 - login
 - registrazione
-- prenota evento
+- prenota evento (con numero di prenotazioni?)
