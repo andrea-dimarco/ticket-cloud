@@ -7,10 +7,16 @@ Our project for the 2022-2023 Cloud Computing exam at Sapienza University.
 - REST api
 
 ### Frontpage
+- header
+    * menu
+    * logo
+    * searchbar
+    * log in / register form
 - barra di ricerca
 - bottone login
 - carosello eventi
 - categorie (?)
+- footer
   
 ### Login
 - email
@@ -29,12 +35,13 @@ Our project for the 2022-2023 Cloud Computing exam at Sapienza University.
 - categorie
 
 ## Azioni
-### Read
+### Create | POST
+- prenota ticket
+- registra utente
+- log in utente
+### Read | GET
 - dettagli evento
 - catalogo completo
 - ricerca
-
-### Get
-- login
-- registrazione
-- prenota evento (con numero di prenotazioni?)
+### Delete | DELETE 
+- logout
