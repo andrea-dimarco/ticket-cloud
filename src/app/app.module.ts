@@ -12,6 +12,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatGridListModule} from '@angular/material/grid-list'
 import {MatCardModule} from '@angular/material/card'
 import {MatMenuModule} from '@angular/material/menu';
+import { MatInputModule } from '@angular/material/input';
+
 import { TicketHeaderComponent } from './ticket-header/ticket-header.component';
 import { DashboardComponent } from './dashboard/dashboard.component'
 
@@ -32,7 +34,8 @@ import { DashboardComponent } from './dashboard/dashboard.component'
     MatDividerModule,
     MatGridListModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
