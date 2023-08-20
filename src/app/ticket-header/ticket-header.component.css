@@ -1,0 +1,19 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+.custom-toolbar {
+    position: relative;
+}
+.custom-toolbar-row {
+    padding: 0px 0px 0px 0px;
+    background-color: antiquewhite;
+    position: sticky;
+}
+
+.search-form-field {
+    width: 200px;
+}
+
+.search-button {
+    background-color: antiquewhite;
+}

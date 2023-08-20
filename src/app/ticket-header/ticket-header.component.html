@@ -1,0 +1,29 @@
+<mat-toolbar class="custom-toolbar" role="heading">
+    <mat-toolbar-row class="custom-toolbar-row">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>home</mat-icon>
+    </button>
+    <span>TicketHub</span>
+    <span class="spacer"></span>
+    <button mat-icon-button aria-label="Search">
+      <mat-icon>search</mat-icon>
+    </button>
+    <mat-form-field class="example-form-field">
+      <input matInput type="text" placeholder="Search for an event ...">
+    </mat-form-field>  
+    <span class="spacer"></span>
+    <button mat-icon-button class="icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>person</mat-icon>
+    </button>
+    
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    <button mat-icon-button class="icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
