@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {EVENTS} from '../mock-events'
+import { EventService } from '../event.service';
+import { Event } from '../event';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,10 +8,23 @@ import {EVENTS} from '../mock-events'
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  events = EVENTS;
-  sport_events = this.events.filter((el) => el.category == "Sport")
-  music_event = this.events.filter((el) => el.category == "Music")
-  show_event = this.events.filter((el) => el.category == "Show")
-  other_event = this.events.filter((el) => el.category == "Other")
+  events: Event[] = [];
+  sport_events : Event[] = [];
+  music_events : Event[] = [];
+  show_events : Event[] = [];
+  other_events : Event[] = [];
+
+  getEvents(): void {
+    this.eventService.getEvents().subscribe(events => this.events=events)
+    this.sport_events = this.events.filter((el) => el.category == "Sport")
+    this.music_events = this.events.filter((el) => el.category == "Music")
+    this.show_events = this.events.filter((el) => el.category == "Show")
+    this.other_events = this.events.filter((el) => el.category == "Other")
+  }
+
+  constructor(private eventService: EventService) {}
+  ngOnInit(): void {
+    this.getEvents()
+  }
 
 }

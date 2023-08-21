@@ -4,4 +4,6 @@ export interface Event {
     date: string;
     category: string;
     url: string;
+    description: string;
+    capacity: number;
 }
