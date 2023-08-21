@@ -9,10 +9,12 @@
       <mat-icon>search</mat-icon>
     </button>
     
+    <!-- Search bar (remove this shit) -->
     <mat-form-field class="example-form-field">
       <input matInput type="text" placeholder="Search for an event ...">
     </mat-form-field>  
     
+    <!-- Login/Register menu -->
     <span class="spacer"></span>
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>person</mat-icon>
@@ -22,6 +24,7 @@
       <app-register (click)="$event.stopPropagation()"></app-register>
     </mat-menu>
     
+    <!-- Share icon -->
     <button mat-icon-button class="icon" aria-label="Example icon-button with share icon">
       <mat-icon>share</mat-icon>
     </button>

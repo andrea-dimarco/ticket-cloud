@@ -3,20 +3,21 @@
       <mat-card-header>
         <mat-card-title>Log in</mat-card-title>
       </mat-card-header>
-      <form class="example-form">
+      <!-- Login Form -->
+      <form class="example-form" #loginForm="ngForm" (ngSubmit)="verifyLogin(loginForm.value)">
         <mat-card-content>
-          <!-- Email -->
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Email">
-          </mat-form-field>
+              <!-- Email -->
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" type="text" name="uEmail" ngModel>
+            </mat-form-field>
 
-          <!-- Password-->
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Password">
-          </mat-form-field>
+            <!-- Password -->
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Password" type="password" name="uPassword" ngModel>
+            </mat-form-field>
         </mat-card-content>
-
-        <button mat-stroked-button color="accent" class="btn-block">Log in</button>
+        <!-- Login Button -->
+        <button mat-stroked-button color="accent" class="btn-block" type="submit">Log in</button>
       </form>
     </mat-card>
   </div>
