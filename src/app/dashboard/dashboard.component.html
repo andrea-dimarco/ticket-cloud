@@ -2,34 +2,48 @@
 
     <h1>Explore events thanks to our state of the art website and have fun</h1>    
 
-    <div class="sport-category">
+    <div class="music-category">
     <h2 class="category-name">Music</h2>
     <mat-grid-list class="custom-grid-list" cols="3">
-        <mat-grid-tile>
-            <mat-grid-tile-header>Gorla plays Paganini </mat-grid-tile-header>
-            <p>ahahahahh</p>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <mat-grid-tile-header>Gorla plays Bach</mat-grid-tile-header>
-            <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcT3LsYDUKIAJ9E34wKYYdW0t_hAKTi0Ol2ayALiLEPBrophOYzJfdc7i6BNKS0mleuaCbBhsmKR1wAJMF8">
-            <mat-grid-tile-footer>30/02/2012</mat-grid-tile-footer>
-        </mat-grid-tile>
-    </mat-grid-list>
-    </div>
-    <div class="sport-category">
-    <h2 class="category-name">Sports</h2>
-    <mat-grid-list class="custom-grid-list" cols="3">
-        <mat-grid-tile>
-            <mat-grid-tile-header>Musk vs Zuck </mat-grid-tile-header>
-            <img src="https://pbs.twimg.com/media/FzQcKMuWYAMabm1?format=jpg&name=large">
-            <mat-grid-tile-footer>30/02/2013</mat-grid-tile-footer>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <mat-grid-tile-header>Torneo Quidditch Italiano</mat-grid-tile-header>
-            <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcT3LsYDUKIAJ9E34wKYYdW0t_hAKTi0Ol2ayALiLEPBrophOYzJfdc7i6BNKS0mleuaCbBhsmKR1wAJMF8">
-            <mat-grid-tile-footer>30/02/2012</mat-grid-tile-footer>
+        <mat-grid-tile *ngFor="let event of music_event">
+            <mat-grid-tile-header>{{event.name}} </mat-grid-tile-header>
+            <img src={{event.url}}>
+            <mat-grid-tile-footer>{{event.date}}</mat-grid-tile-footer>
         </mat-grid-tile>
     </mat-grid-list>
     </div>
 
+    <div class="sport-category">
+    <h2 class="category-name">Sports</h2>
+    <mat-grid-list class="custom-grid-list" cols="3">
+        <mat-grid-tile *ngFor="let event of sport_events">
+            <mat-grid-tile-header>{{event.name}} </mat-grid-tile-header>
+            <img src={{event.url}}>
+            <mat-grid-tile-footer>{{event.date}}</mat-grid-tile-footer>
+        </mat-grid-tile>
+    </mat-grid-list>
+    </div>
+
+    <div class="show-category">
+        <h2 class="category-name">Show</h2>
+        <mat-grid-list class="custom-grid-list" cols="3">
+            <mat-grid-tile *ngFor="let event of show_event">
+                <mat-grid-tile-header>{{event.name}} </mat-grid-tile-header>
+                <img src={{event.url}}>
+                <mat-grid-tile-footer>{{event.date}}</mat-grid-tile-footer>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+    
+    <div class="other-category">
+        <h2 class="category-name">Other</h2>
+        <mat-grid-list class="custom-grid-list" cols="3">
+            <mat-grid-tile *ngFor="let event of other_event">
+                <mat-grid-tile-header>{{event.name}} </mat-grid-tile-header>
+                <img src={{event.url}}>
+                <mat-grid-tile-footer>{{event.date}}</mat-grid-tile-footer>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+    
 </div>

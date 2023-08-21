@@ -13,23 +13,13 @@
       <input matInput type="text" placeholder="Search for an event ...">
     </mat-form-field>  
     
-    <!--
     <span class="spacer"></span>
-    <button mat-icon-button class="icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>person</mat-icon>
     </button>
-    -->
-
-    <!--
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-    -->
-    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>person</mat-icon></button>
     <mat-menu #menu="matMenu">
-      <!--
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-      -->
-      <router-outlet></router-outlet>
+      <app-log-in (click)="$event.stopPropagation()"></app-log-in>
+      <app-register (click)="$event.stopPropagation()"></app-register>
     </mat-menu>
     
     <button mat-icon-button class="icon" aria-label="Example icon-button with share icon">
