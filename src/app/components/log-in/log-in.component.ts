@@ -1,7 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+
+// Import the AuthService type from the SDK
+import { AuthService } from '@auth0/auth0-angular';
+
+@Component({
+  selector: 'app-auth-button',
+  template: '<button (click)="auth.loginWithRedirect()">Log in</button>',
+  templateUrl: './log-in.component.html',
+  styleUrls: ['./log-in.component.css']
+})
+export class AuthButtonComponent implements OnInit {
+  ngOnInit(): void { }
+  // Inject the authentication service into your component through the constructor
+  constructor(public auth: AuthService) {}
+}
+
+
+/*
+
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators'
 import { User } from 'src/app/models/users';
+
 
 @Component({
   selector: 'app-log-in',
@@ -35,3 +56,4 @@ export class LogInComponent {
     });
   }
 }
+*/

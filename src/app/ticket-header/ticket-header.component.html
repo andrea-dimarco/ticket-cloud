@@ -12,10 +12,17 @@
       <mat-icon>person</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
+      <app-auth-button></app-auth-button>
+      <div *ngIf="auth.user$ | async as user">
+        <h2>Welcome</h2>
+        <p>{{ user.email }}</p>
+      </div>
+      <!--
       <div class="toAuthenticate" *ngIf="notAuthenticated; else logout">
       <app-log-in  (click)="$event.stopPropagation()"></app-log-in>
       <app-register (click)="$event.stopPropagation()"></app-register>
       </div>
+      
       <ng-template #logout>
       <mat-card>
         <mat-card-header>Hello user</mat-card-header>
@@ -23,6 +30,7 @@
         <button mat-stroked-button>Logout</button>
       </mat-card>
       </ng-template>
+      -->
     </mat-menu>
     
     <!-- Share icon -->

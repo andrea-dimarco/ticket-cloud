@@ -6,7 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TicketHeaderComponent } from './ticket-header/ticket-header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LogInComponent } from './components/log-in/log-in.component';
+//import { LogInComponent } from './components/log-in/log-in.component';
+import { AuthButtonComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component'
 import { EventPageComponent } from './event-page/event-page.component';
 
@@ -15,18 +16,21 @@ import { EventPageComponent } from './event-page/event-page.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthModule } from '@auth0/auth0-angular';
 
 //Communication
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { EventSearchboxComponent } from './components/event-searchbox/event-searchbox.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     TicketHeaderComponent,
     DashboardComponent,
-    LogInComponent,
+    //LogInComponent,
+    AuthButtonComponent,
     RegisterComponent,
     EventPageComponent,
     EventSearchboxComponent
@@ -46,7 +50,17 @@ import { EventSearchboxComponent } from './components/event-searchbox/event-sear
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )  ],
+    ),
+    
+    // Authentication Module
+    AuthModule.forRoot({
+      domain: 'dev-8vt3dv36pv7fuamn.us.auth0.com',
+      clientId: '7ZfKSIKVGOnlBjle30dW5Zi5MEh9pHx7',
+      authorizationParams: {
+        redirect_uri: window.location.origin
+      }
+    })
+  ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
