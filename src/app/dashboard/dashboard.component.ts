@@ -14,17 +14,21 @@ export class DashboardComponent {
   show_events : Event[] = [];
   other_events : Event[] = [];
 
-  getEvents(): void {
-    this.eventService.getEvents().subscribe(events => this.events=events)
-    this.sport_events = this.events.filter((el) => el.category == "Sport")
-    this.music_events = this.events.filter((el) => el.category == "Music")
-    this.show_events = this.events.filter((el) => el.category == "Show")
-    this.other_events = this.events.filter((el) => el.category == "Other")
-  }
 
   constructor(private eventService: EventService) {}
   ngOnInit(): void {
     this.getEvents()
+  }
+  getEvents(): void {
+    this.eventService.getEvents().subscribe(res => {
+      this.events = res;
+      this.sport_events = this.events.filter((el) => el.category == "Sport")
+      this.music_events = this.events.filter((el) => el.category == "Music")
+      this.show_events = this.events.filter((el) => el.category == "Show")
+      this.other_events = this.events.filter((el) => el.category == "Other")  
+      console.log(res)
+      console.log(this.events)
+    })
   }
 
 }
