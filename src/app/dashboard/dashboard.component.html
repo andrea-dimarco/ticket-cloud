@@ -4,11 +4,11 @@
 
     <div class="music-category">
     <h2 class="category-name">Music</h2>
-    <mat-grid-list class="custom-grid-list" cols="3">
+    <mat-grid-list class="custom-grid-list" cols="3" gutterSize="15px">
         <mat-grid-tile *ngFor="let event of music_events">
             <a routerLink="/event-page/{{event.id}}">
             <mat-grid-tile-header>{{event.name}} </mat-grid-tile-header>
-            <img src={{event.url}}>
+            <img src={{event.url}} width="1000" height="auto">
             <mat-grid-tile-footer>{{event.date}}</mat-grid-tile-footer>
             </a>
         </mat-grid-tile>
@@ -17,7 +17,7 @@
 
     <div class="sport-category">
         <h2 class="category-name">Sports</h2>
-    <mat-grid-list class="custom-grid-list" cols="3">
+    <mat-grid-list class="custom-grid-list" cols="3" gutterSize="15px">
         <mat-grid-tile *ngFor="let event of sport_events">
             <a routerLink="/event-page/{{event.id}}">
                 <mat-grid-tile-header>{{event.name}} </mat-grid-tile-header>
@@ -30,7 +30,7 @@
 
     <div class="show-category">
         <h2 class="category-name">Show</h2>
-        <mat-grid-list class="custom-grid-list" cols="3">
+        <mat-grid-list class="custom-grid-list" cols="3" gutterSize="15px">
             <mat-grid-tile *ngFor="let event of show_events">
                 <a routerLink="/event-page/{{event.id}}">
                     <mat-grid-tile-header>{{event.name}} </mat-grid-tile-header>
@@ -43,7 +43,7 @@
     
     <div class="other-category">
         <h2 class="category-name">Other</h2>
-        <mat-grid-list class="custom-grid-list" cols="3">
+        <mat-grid-list class="custom-grid-list" cols="3" gutterSize="15px">
             <mat-grid-tile *ngFor="let event of other_events">
                 <a routerLink="/event-page/{{event.id}}">
                     <mat-grid-tile-header>{{event.name}} </mat-grid-tile-header>

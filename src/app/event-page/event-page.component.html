@@ -1,6 +1,26 @@
-<h2>{{event.name}}</h2>
-<p>{{event.capacity}}</p>
-<p>{{event.date}}</p>
-<p>{{event.description}}</p>
-<p>{{event.id}}</p>
-<button mat-button>Get A Free Ticket!!</button>
+<mat-card class="event-card">
+<mat-card-header>
+    <mat-card-title>{{event.name}}</mat-card-title>
+</mat-card-header>
+    <img mat-card-image src={{event.url}} width="800" height="auto">
+<mat-card-content>
+    <p>Lorem ipsum dolor sit amet consectetur, 
+        adipisicing elit. Officiis molestias cumque vero, 
+        voluptas iusto voluptatum eum ex dicta repellat reprehenderit 
+        non officia ullam? Libero, provident quod aliquid odit possimus 
+        minus ullam in quasi vel adipisci labore inventore ipsam ipsum, 
+        unde qui distinctio. Dolore ipsam distinctio modi inventore magnam 
+        quo natus, qui sunt et nobis aliquam voluptatibus ducimus temporibus 
+        impedit eveniet placeat fugiat aliquid consequatur quidem asperiores 
+        dolorem ex atque rerum. Fugit nulla sunt odit ducimus commodi porro 
+        corporis molestias itaque at aperiam voluptatem enim beatae quod nisi, 
+        neque qui libero iusto ut optio ratione ea tenetur perferendis! Corrupti, 
+        eum! Facilis.
+    </p>
+    <p>Available tickets: {{event.capacity}}</p>
+    <p>Date: {{event.date}}</p>    
+</mat-card-content>
+<mat-card-actions>
+    <button mat-button>Get A Free Ticket!!</button>
+</mat-card-actions>
+</mat-card>

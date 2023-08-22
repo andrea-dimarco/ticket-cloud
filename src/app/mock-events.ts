@@ -6,7 +6,7 @@ export const EVENTS : Event[] = [
         name: "Gorla plays Paganini", 
         date: "12/12/2024", 
         category: "Music",
-        url:"https://static01.nyt.com/images/2016/09/28/us/28xp-pepefrog/28xp-pepefrog-articleLarge.jpg?quality=75&auto=webp",
+        url:"https://i.redd.it/5zxwdwh98s681.png",
         description: "Lorem ipsum",
         capacity: 2000
     },
@@ -15,7 +15,7 @@ export const EVENTS : Event[] = [
         name: "Gorla plays Bach", 
         date: "12/11/2024", 
         category: "Music",        
-        url:"https://static01.nyt.com/images/2016/09/28/us/28xp-pepefrog/28xp-pepefrog-articleLarge.jpg?quality=75&auto=webp",
+        url:"https://i.redd.it/5zxwdwh98s681.png",
         description: "Lorem ipsum",
         capacity: 2000
 
