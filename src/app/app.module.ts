@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { EventSearchboxComponent } from './components/event-searchbox/event-searchbox.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     DashboardComponent,
     LogInComponent,
     RegisterComponent,
-    EventPageComponent
+    EventPageComponent,
+    EventSearchboxComponent
   ],
   imports: [
     BrowserModule,

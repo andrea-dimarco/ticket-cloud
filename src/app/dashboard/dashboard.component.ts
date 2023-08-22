@@ -19,6 +19,7 @@ export class DashboardComponent {
   ngOnInit(): void {
     this.getEvents()
   }
+  
   getEvents(): void {
     this.eventService.getEvents().subscribe(res => {
       this.events = res;

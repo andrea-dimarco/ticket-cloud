@@ -5,15 +5,7 @@
     </button>
     <span>TicketHub</span>
     <span class="spacer"></span>
-    <button mat-icon-button aria-label="Search">
-      <mat-icon>search</mat-icon>
-    </button>
-    
-    <!-- Search bar (remove this shit) -->
-    <mat-form-field class="example-form-field">
-      <input matInput type="text" placeholder="Search for an event ...">
-    </mat-form-field>  
-    
+    <app-event-searchbox></app-event-searchbox>    
     <!-- Login/Register menu -->
     <span class="spacer"></span>
     <button mat-icon-button [matMenuTriggerFor]="menu">
