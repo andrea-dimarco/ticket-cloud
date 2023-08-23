@@ -1,14 +1,14 @@
-<button mat-icon-button aria-label="Search">
-    <mat-icon>search</mat-icon>
-  </button>
-
-<mat-form-field class="example-form-field">
-    <input matInput #searchBox id="search-box" type="text" placeholder="Search for an event ..." (input)="search(searchBox.value)">
-    <mat-list class="search-result">
-        <mat-list-item *ngFor="let event of events$ | async" >
-          <a routerLink="/event-page/{{event.id}}">
-            {{event.name}}
-          </a>
-        </mat-list-item>
-    </mat-list>
-</mat-form-field>  
+<form class="search-box">
+<mat-form-field class="search-field">
+    <mat-label>Search an event with our state of the art search bar</mat-label>
+    <input matInput #searchBox id="search-box-input" type="text" (input)="search(searchBox.value)" [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option *ngFor="let event of events$ | async" [value]="event.name">
+        <a routerLink="/event-page/{{event.id}}">
+          {{event.name}}
+        </a>
+      </mat-option>
+    </mat-autocomplete>
+</mat-form-field>
+</form>
+<div>

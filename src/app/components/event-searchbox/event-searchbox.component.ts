@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 import { Observable, Subject } from 'rxjs';
 import {
@@ -17,7 +18,7 @@ export class EventSearchboxComponent implements OnInit {
   events$!: Observable<Event[]>;
   private searchTerms = new Subject<string>();
   constructor(private eventService: EventService) {}
-
+  myControl = new FormControl('');
   // Push a search term into the observable stream.
   search(term: string): void {
     this.searchTerms.next(term);

@@ -4,12 +4,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// Custom components
 import { TicketHeaderComponent } from './ticket-header/ticket-header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 //import { LogInComponent } from './components/log-in/log-in.component';
 import { AuthButtonComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component'
 import { EventPageComponent } from './event-page/event-page.component';
+import { EventSearchboxComponent } from './components/event-searchbox/event-searchbox.component';
 
 
 // login
@@ -22,7 +24,6 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
-import { EventSearchboxComponent } from './components/event-searchbox/event-searchbox.component';
 
 @NgModule({
   declarations: [
