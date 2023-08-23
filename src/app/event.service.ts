@@ -11,16 +11,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class EventService {
 
-  private eventsUrl = 'api/events';  // URL to web api
+  private eventsUrl = 'https://nbm2hi6toj.execute-api.us-east-1.amazonaws.com/default/getEvents';  // URL to web api
   constructor(
     private http: HttpClient) { }
 
     // GET Events
     getEvents() : Observable<Event[]> {
       console.log("Returning events")
-      const events = this.http.get<Event[]>(this.eventsUrl)
+      return this.http.get<Event[]>(this.eventsUrl)
       // events.subscribe(responseData => console.log(responseData))
-      return events
     }
 
     /** 

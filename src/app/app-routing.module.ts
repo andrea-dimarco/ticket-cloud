@@ -4,11 +4,13 @@ import { AuthButtonComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
 import { EventPageComponent } from './event-page/event-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PurchaseTicketComponent } from './purchase-ticket/purchase-ticket.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
   { path:"dashboard", component: DashboardComponent},
-  { path: 'event-page/:id', component: EventPageComponent}
+  { path: 'event-page/:id', component: EventPageComponent, runGuardsAndResolvers: 'always'},
+  { path: 'purchase-ticket', component: PurchaseTicketComponent}
 ];
 
 @NgModule({

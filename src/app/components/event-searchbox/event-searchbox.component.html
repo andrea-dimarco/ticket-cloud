@@ -3,7 +3,7 @@
     <mat-label>Search an event with our state of the art search bar</mat-label>
     <input matInput #searchBox id="search-box-input" type="text" (input)="search(searchBox.value)" [matAutocomplete]="auto">
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let event of events$ | async" [value]="event.name">
+      <mat-option *ngFor="let event of events$ | async">
         <a routerLink="/event-page/{{event.id}}">
           {{event.name}}
         </a>

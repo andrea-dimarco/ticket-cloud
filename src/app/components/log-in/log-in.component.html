@@ -1,4 +1,3 @@
-<header>
   <h3>Authentication</h3>
   <div *ngIf="auth.isAuthenticated$ | async; else loggedOut">
     <button class="btn btn-warning" (click)="auth.logout()">
@@ -11,4 +10,3 @@
       Log in
     </button>
   </ng-template>
-</header>

@@ -23,7 +23,8 @@ import { AuthModule } from '@auth0/auth0-angular';
 //Communication
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+//import { InMemoryDataService } from './in-memory-data.service';
+import { PurchaseTicketComponent } from './purchase-ticket/purchase-ticket.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     AuthButtonComponent,
     RegisterComponent,
     EventPageComponent,
-    EventSearchboxComponent
+    EventSearchboxComponent,
+    PurchaseTicketComponent
   ],
   imports: [
     BrowserModule,
@@ -49,9 +51,9 @@ import { InMemoryDataService } from './in-memory-data.service';
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ),
+    //HttpClientInMemoryWebApiModule.forRoot(
+    //  InMemoryDataService, { dataEncapsulation: false }
+    //),
     
     // Authentication Module
     AuthModule.forRoot({
