@@ -5,8 +5,10 @@
     </button>
     <span>TicketHub</span>
     <span class="spacer"></span>
+    
     <!--Search box component-->
-    <app-event-searchbox></app-event-searchbox>    
+    <app-event-searchbox></app-event-searchbox>
+
     <!-- Login/Register menu -->
     <span class="spacer"></span>
     <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -35,8 +37,9 @@
     </mat-menu>
     
     <!-- Share icon -->
-    <button mat-icon-button class="icon" aria-label="Example icon-button with share icon">
+    <button mat-icon-button class="icon" aria-label="Example icon-button with share icon" routerLink="/404">
       <mat-icon>share</mat-icon>
     </button>
+
     </mat-toolbar-row>
   </mat-toolbar>
