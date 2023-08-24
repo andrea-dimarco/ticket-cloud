@@ -25,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 //import { InMemoryDataService } from './in-memory-data.service';
 import { PurchaseTicketComponent } from './purchase-ticket/purchase-ticket.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PurchaseTicketComponent } from './purchase-ticket/purchase-ticket.compo
     RegisterComponent,
     EventPageComponent,
     EventSearchboxComponent,
-    PurchaseTicketComponent
+    PurchaseTicketComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
