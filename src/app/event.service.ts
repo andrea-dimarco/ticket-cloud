@@ -3,6 +3,7 @@ import { Event } from './event';
 import { EVENTS } from './mock-events';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators'
 
 
 @Injectable({
@@ -20,7 +21,11 @@ export class EventService {
     // GET Events
     getEvents() : Observable<Event[]> {
       console.log("Returning events")
-      return this.http.get<Event[]>(this.eventsUrl)
+      return this.http.get<Event[]>(this.eventsUrl).pipe(map( (res) => {
+        var events: Event[] = []
+        events = JSON.parse(res["body"]);
+        return events;
+      }))
       // events.subscribe(responseData => console.log(responseData))
     }
 
@@ -33,7 +38,7 @@ export class EventService {
     // Get Event by ID
     getEvent(id: number): Observable<Event> {
       const url = `${this.eventsUrl}/${id}`;
-      return this.http.get<Event>(url)
+      return this.http.get<Event>(url);
     }
 
     // Get Events by search term
