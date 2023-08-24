@@ -23,12 +23,13 @@ export class DashboardComponent {
   getEvents(): void {
     this.eventService.getEvents().subscribe(res => {
       this.events = res;
+      console.log(res)
+      console.log(this.events)
+
       this.sport_events = this.events.filter((el) => el.category == "Sport")
       this.music_events = this.events.filter((el) => el.category == "Music")
       this.show_events = this.events.filter((el) => el.category == "Show")
       this.other_events = this.events.filter((el) => el.category == "Other")  
-      console.log(res)
-      console.log(this.events)
     })
   }
 

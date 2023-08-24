@@ -11,7 +11,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class EventService {
 
-  private eventsUrl = 'https://nbm2hi6toj.execute-api.us-east-1.amazonaws.com/default/getEvents';  // URL to web api
+  //private eventsUrl = 'https://nbm2hi6toj.execute-api.us-east-1.amazonaws.com/default/getEvents';  // URL to web api
+  private eventsUrl = 'https://455ju7f6pj.execute-api.us-east-1.amazonaws.com/Prod'; // URL to web api
+
   constructor(
     private http: HttpClient) { }
 
