@@ -1,12 +1,27 @@
+h1 {
+    font-weight: bold;
+    color: var(--tertiary-color);
+}
 .spacer {
     flex: 1 1 auto;
   }
 .custom-toolbar-row {
-    background-color: antiquewhite;
+    background-color: var(--primary-color);
     height: 100%;
 }
 
 .custom-toolbar {
     height:80px;
     display: flex;
+}
+
+.example-icon {
+    color: var(--tertiary-color);
+}
+.example-icon:hover {
+    color: var(--secondary-color);
+}
+
+.my-menu {
+    background-color: var(--primary-color);
 }

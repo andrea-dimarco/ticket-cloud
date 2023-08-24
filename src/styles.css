@@ -1,6 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 /*Reset margins and paddings before modifying*/
+:root {
+  --primary-color: DodgerBlue;
+  --secondary-color: GreenYellow;
+  --tertiary-color: AliceBlue;
+}
+
+body {
+  background-color: var(--tertiary-color);
+}
+
 * {
   margin:0;
   padding:0

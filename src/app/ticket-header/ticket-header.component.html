@@ -1,9 +1,9 @@
 <mat-toolbar class="custom-toolbar" role="heading">
     <mat-toolbar-row class="custom-toolbar-row">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="navigate()">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="navigate()">
       <mat-icon>home</mat-icon>
     </button>
-    <span>TicketHub</span>
+    <h1>TicketHub</h1>
     <span class="spacer"></span>
     
     <!--Search box component-->
@@ -11,10 +11,10 @@
 
     <!-- Login/Register menu -->
     <span class="spacer"></span>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
+    <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
       <mat-icon>person</mat-icon>
     </button>
-    <mat-menu #menu="matMenu">
+    <mat-menu class="my-menu" #menu="matMenu">
       <h2>Welcome</h2>
       <div *ngIf="auth.user$ | async as user; else notLogged">
         <p>Glad to see you back</p>
@@ -43,7 +43,7 @@
     </mat-menu>
     
     <!-- Share icon -->
-    <button mat-icon-button class="icon" aria-label="Example icon-button with share icon" routerLink="/404">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" routerLink="/404">
       <mat-icon>share</mat-icon>
     </button>
 

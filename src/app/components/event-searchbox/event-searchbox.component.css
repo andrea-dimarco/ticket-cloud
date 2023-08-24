@@ -5,7 +5,6 @@
     align-items: center;
     margin:auto;
     padding-top: 20px;
-
 }
 
 .search-field {
@@ -15,4 +14,11 @@
     border:none;
     border-radius: 4px;
     font-size: 16px;
+}
+
+.input {
+    color: var(--tertiary-color);
+}
+.mat-label {
+    color: var(--secondary-color);
 }
