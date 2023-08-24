@@ -13,7 +13,7 @@ import { map } from 'rxjs/operators'
 export class EventService {
 
   //private eventsUrl = 'https://nbm2hi6toj.execute-api.us-east-1.amazonaws.com/default/getEvents';  // URL to web api
-  private eventsUrl = 'https://455ju7f6pj.execute-api.us-east-1.amazonaws.com/Prod'; // URL to web api
+  private eventsUrl = 'https://zi00b7ns35.execute-api.us-east-1.amazonaws.com/Prod'; // URL to web api
 
   constructor(
     private http: HttpClient) { }

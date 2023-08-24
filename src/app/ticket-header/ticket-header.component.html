@@ -15,11 +15,17 @@
       <mat-icon>person</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <app-auth-button></app-auth-button>
-      <div *ngIf="auth.user$ | async as user">
-        <h2>Welcome</h2>
-        <p>{{ user.email }}</p>
+      <h2>Welcome</h2>
+      <div *ngIf="auth.user$ | async as user; else notLogged">
+        <p>Glad to see you back</p>
+        <p>user: {{ user.email }}</p>
       </div>
+    
+      <ng-template #notLogged>
+        <p>Please log in to your account.</p>
+      </ng-template>
+
+      <app-auth-button></app-auth-button>
       <!--
       <div class="toAuthenticate" *ngIf="notAuthenticated; else logout">
       <app-log-in  (click)="$event.stopPropagation()"></app-log-in>

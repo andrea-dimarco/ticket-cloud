@@ -1,6 +1,9 @@
 
 .category-name {
+    margin: 10px;
     text-align: center;
+    color: darkslategrey;
+    font-weight: bold;
 }
 
 .body {
@@ -8,4 +11,46 @@
     box-sizing: border-box;
 }
 
+.custom-grid-list {
+    text-align: center;
+}
+.tile-pic {
+    cursor: pointer;
+    width: 150%;
+    height: 150%;
+    filter: grayscale(100%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
   
+.tile-pic:hover {
+    width: 170%;
+    height: 170%;
+    filter: grayscale(0%);
+}
+
+.tile-date {
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+.tile-title {
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+}
+
+
+.mat-grid-tile {
+    border-radius: 5px;
+    text-align: center;
+}
+.mat-grid-list, hr { 
+    margin-top: 15px; 
+    margin-bottom: 15px;
+}

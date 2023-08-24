@@ -1,12 +1,11 @@
-  <h3>Authentication</h3>
-  <div *ngIf="auth.isAuthenticated$ | async; else loggedOut">
-    <button class="btn btn-warning" (click)="auth.logout()">
+ <div *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+    <button mat-raised-button class="btn btn-warning" (click)="auth.logout()">
       Log out
     </button>
   </div>
 
   <ng-template #loggedOut>
-    <button class="btn btn-primary" (click)="auth.loginWithRedirect()">
+    <button mat-raised-button class="btn btn-primary" (click)="auth.loginWithRedirect()">
       Log in
     </button>
   </ng-template>
