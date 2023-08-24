@@ -11,13 +11,13 @@ import { EventService } from '../event.service';
 })
 export class EventPageComponent implements OnInit {
   event : Event = {
-    id: 1,
-    name: "a",
-    description: "a",
-    category: "Music",
-    url: "a",
-    date: "1",
-    capacity: 1
+    id: 0,
+    name: "missing",
+    description: "missing",
+    category: "missing",
+    url: "missing",
+    date: "missing",
+    capacity: 0
   };
   constructor(
     private route: ActivatedRoute,
@@ -32,6 +32,6 @@ export class EventPageComponent implements OnInit {
   getEvent(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.eventService.getEvent(id)
-      .subscribe(event => this.event = event);
+      .subscribe( (event) => this.event = event);
   }
 }
