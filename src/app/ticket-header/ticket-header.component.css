@@ -23,11 +23,15 @@ h1 {
 }
 
 .mat-menu-div {
-    background-color: var(--tertiary-color);
+    background-color:white;
     padding: 10px;
 }
 
 .title-link {
     text-decoration: none;
     font-size:larger;
+}
+
+.auth-div {
+    color: var(--primary-color);
 }

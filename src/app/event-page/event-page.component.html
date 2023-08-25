@@ -10,7 +10,7 @@
     <p>Date: {{event.date}}</p>    
 </mat-card-content>
 <mat-card-actions>
-    <button mat-button class="get-ticket-button" [matMenuTriggerFor]="menu">
+    <button mat-button [disabled]="auth.isAuthenticated$" class="get-ticket-button" [matMenuTriggerFor]="menu">
         Get Ticket
     </button>
       <mat-menu class="my-menu" #menu="matMenu">

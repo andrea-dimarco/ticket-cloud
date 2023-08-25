@@ -3,6 +3,7 @@ import { Event } from '../event';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { EventService } from '../event.service';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-event-page',
@@ -22,7 +23,8 @@ export class EventPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private eventService: EventService,
-    private location: Location
+    private location: Location,
+    public auth: AuthService
   ) {}
 
   ngOnInit(): void {

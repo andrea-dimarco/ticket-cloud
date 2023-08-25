@@ -4,9 +4,9 @@
 }
 
 .get-ticket-button {
-    background-color: dodgerblue;
+    background-color:rgb(50, 151, 50);
     color: aliceblue;
-    opacity: 0.8;
+    opacity: 1.0;
 }
 
 .get-ticket-button:hover {
