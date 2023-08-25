@@ -22,6 +22,7 @@ h1 {
     color: var(--secondary-color);
 }
 
-.my-menu {
-    background-color: var(--primary-color);
+.mat-menu-div {
+    background-color: var(--tertiary-color);
+    padding: 10px;
 }

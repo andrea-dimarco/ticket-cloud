@@ -9,37 +9,25 @@
     <!--Search box component-->
     <app-event-searchbox></app-event-searchbox>
 
-    <!-- Login/Register menu -->
     <span class="spacer"></span>
+    <!-- Login/Register menu -->
+    
     <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
       <mat-icon>person</mat-icon>
     </button>
+
     <mat-menu class="my-menu" #menu="matMenu">
+      <div class="mat-menu-div">
       <h2>Welcome</h2>
       <div *ngIf="auth.user$ | async as user; else notLogged">
         <p>Glad to see you back</p>
         <p>user: {{ user.email }}</p>
       </div>
-    
       <ng-template #notLogged>
-        <p>Please log in to your account.</p>
+        <p>Please authenticate yourself.</p>
       </ng-template>
-
       <app-auth-button></app-auth-button>
-      <!--
-      <div class="toAuthenticate" *ngIf="notAuthenticated; else logout">
-      <app-log-in  (click)="$event.stopPropagation()"></app-log-in>
-      <app-register (click)="$event.stopPropagation()"></app-register>
       </div>
-      
-      <ng-template #logout>
-      <mat-card>
-        <mat-card-header>Hello user</mat-card-header>
-        <button mat-stroked-button>Profile</button>
-        <button mat-stroked-button>Logout</button>
-      </mat-card>
-      </ng-template>
-      -->
     </mat-menu>
     
     <!-- Share icon -->
