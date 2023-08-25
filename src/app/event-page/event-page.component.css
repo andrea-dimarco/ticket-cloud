@@ -3,6 +3,13 @@
     position: center;
 }
 
-button {
-    background-color:antiquewhite;
+.get-ticket-button {
+    background-color: dodgerblue;
+    color: aliceblue;
+    opacity: 0.8;
+}
+
+.get-ticket-button:hover {
+    color: var(--secondary-color);
+    opacity: 0.8;
 }
