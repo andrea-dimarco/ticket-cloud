@@ -26,3 +26,8 @@ h1 {
     background-color: var(--tertiary-color);
     padding: 10px;
 }
+
+.title-link {
+    text-decoration: none;
+    font-size:larger;
+}
