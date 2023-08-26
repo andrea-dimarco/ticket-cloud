@@ -32,7 +32,7 @@ export class EventPageComponent implements OnInit {
   }
 
   createTicket(n_tickets) : void {
-    console.log("AAAAAAAAAAAA");
+    //console.log("AAAAAAAAAAAA");
     // make post request
                                 // user_email, id_event,      n_tickets
     this.eventService.createTicket("pd", this.event.id, n_tickets)
