@@ -12,32 +12,42 @@ import { map } from 'rxjs/operators'
 
 export class EventService {
 
-  private eventsUrl = 'https://azuwliobz7.execute-api.us-east-1.amazonaws.com/prod/events'; // URL to web api
-
+  //private eventsUrl = 'https://azuwliobz7.execute-api.us-east-1.amazonaws.com/prod'; // URL to web api
+  private eventsUrl = "https://5ces89rrk3.execute-api.us-east-1.amazonaws.com/prod";
   constructor(
     private http: HttpClient) { }
 
     // GET Events
     getEvents() : Observable<Event[]> {
-      console.log("Returning events")
+      //console.log("Returning events")
+      /** 
       return this.http.get<Event[]>(this.eventsUrl).pipe(map( (res) => {
-        var events: Event[] = []
-        events = JSON.parse(res["body"]);
+        var events: Event[] = res
+        //console.log(events)
         return events;
-      }))
-      // events.subscribe(responseData => console.log(responseData))
+      }))*/
+      return this.http.get<Event[]>(this.eventsUrl)
     }
 
-    /** 
-    getEvent(id: number) : Observable<Event> {
-      const event = EVENTS.find(e => e.id === id)!;
-      return of(event)
-    }
-    */
     // Get Event by ID
     getEvent(id: number): Observable<Event> {
-      const url = `${this.eventsUrl}/${id}`;
-      return this.http.get<Event>(url);
+      console.log("fetching event with id", id)
+      const url = `${this.eventsUrl}/events?id=${id}`;
+      return this.http.get<Event>(url).pipe(map(
+        res => {
+          var result : Event  = res['Item'];
+          // deserialize object 
+          result['capacity']= result['capacity']['N']
+          result['id']= result['id']['N']
+          result['category']= result['category']['S']
+          result['url']= result['url']['S']
+          result['name']= result['name']['S']
+          result['date']= result['date']['S']
+          result['description']= result['description']['S']
+          return result
+        }
+      ))
+
     }
 
     // Get Events by search term

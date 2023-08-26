@@ -11,15 +11,7 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrls: ['./event-page.component.css']
 })
 export class EventPageComponent implements OnInit {
-  event : Event = {
-    id: 0,
-    name: "missing",
-    description: "missing",
-    category: "missing",
-    url: "missing",
-    date: "missing",
-    capacity: 0
-  };
+  event : Event;
   constructor(
     private route: ActivatedRoute,
     private eventService: EventService,
