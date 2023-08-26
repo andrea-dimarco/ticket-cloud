@@ -12,6 +12,8 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class EventPageComponent implements OnInit {
   event : Event;
+  selected;
+
   constructor(
     private route: ActivatedRoute,
     private eventService: EventService,
@@ -27,5 +29,13 @@ export class EventPageComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.eventService.getEvent(id)
       .subscribe( (event) => this.event = event);
+  }
+
+  createTicket(n_tickets) : void {
+    console.log("AAAAAAAAAAAA");
+    // make post request
+                                // user_email, id_event,      n_tickets
+    this.eventService.createTicket("pd", this.event.id, n_tickets)
+      .subscribe((res) => console.log(res))
   }
 }

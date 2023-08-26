@@ -10,11 +10,12 @@
     <p>Date: {{event.date}}</p>    
 </mat-card-content>
 <mat-card-actions>
-    <button mat-button [disabled]="auth.isAuthenticated$" class="get-ticket-button" [matMenuTriggerFor]="menu">
+    <button mat-button [disabled]="!auth.isAuthenticated$" class="get-ticket-button" (click)="createTicket(1)">
         Get Ticket
     </button>
+    <!--
       <mat-menu class="my-menu" #menu="matMenu">
-        <mat-option>1</mat-option>
+        <mat-option (selectionChange)="createTicket(1)">1</mat-option>
         <mat-option>2</mat-option>
         <mat-option>3</mat-option>
         <mat-option>4</mat-option>
@@ -25,7 +26,7 @@
         <mat-option>9</mat-option>
         <mat-divider></mat-divider>
         <mat-option>10+</mat-option>
-
     </mat-menu>
+    -->
   </mat-card-actions>
 </mat-card>
