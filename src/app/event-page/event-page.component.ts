@@ -32,14 +32,14 @@ export class EventPageComponent implements OnInit {
   }
 
   createTicket(n_tickets) : void {
-    //console.log("AAAAAAAAAAAA");
+    var email = document.getElementById("top-secret").textContent;
     // make post request
-                                // user_email, id_event,      n_tickets
-    this.eventService.createTicket("johndoe@cloud.it", this.event.id, n_tickets)
+    this.eventService.createTicket(email, this.event.id, n_tickets)
       .subscribe((res) => console.log(res))
   }
 
   foo(n_tickets) : void {
     console.log(n_tickets);
+    console.log(document.getElementById("top-secret").textContent)
   }
 }

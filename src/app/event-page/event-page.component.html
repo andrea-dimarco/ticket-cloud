@@ -10,21 +10,27 @@
     <p>Date: {{event.date}}</p>    
 </mat-card-content>
 <mat-card-actions>
-    <button mat-button [disabled]="!auth.isAuthenticated$" class="get-ticket-button" [matMenuTriggerFor]="menu">
-        Get Ticket
-    </button>
-      <mat-menu class="my-menu" #menu="matMenu">
-        <mat-option (click)="createTicket(1)">1</mat-option>
-        <mat-option (click)="createTicket(2)">2</mat-option>
-        <mat-option (click)="createTicket(3)">3</mat-option>
-        <mat-option (click)="createTicket(4)">4</mat-option>
-        <mat-option (click)="createTicket(5)">5</mat-option>
-        <mat-option (click)="createTicket(6)">6</mat-option>
-        <mat-option (click)="createTicket(7)">7</mat-option>
-        <mat-option (click)="createTicket(8)">8</mat-option>
-        <mat-option (click)="createTicket(9)">9</mat-option>
-        <mat-divider></mat-divider>
-        <mat-option routerLink="/404">10+</mat-option>
-    </mat-menu>
+    <div *ngIf="auth.user$ | async as user; else notLogged">
+        <p #user_email id="top-secret" class="top-secret">{{ user.email }}</p>
+        <button mat-button [disabled]="!auth.isAuthenticated$" class="get-ticket-button" [matMenuTriggerFor]="menu">
+            Get Ticket
+        </button>
+        <mat-menu class="my-menu" #menu="matMenu">
+            <mat-option (click)="createTicket(1)">1</mat-option>
+            <mat-option (click)="createTicket(2)">2</mat-option>
+            <mat-option (click)="createTicket(3)">3</mat-option>
+            <mat-option (click)="createTicket(4)">4</mat-option>
+            <mat-option (click)="createTicket(5)">5</mat-option>
+            <mat-option (click)="createTicket(6)">6</mat-option>
+            <mat-option (click)="createTicket(7)">7</mat-option>
+            <mat-option (click)="createTicket(8)">8</mat-option>
+            <mat-option (click)="createTicket(9)">9</mat-option>
+            <mat-divider></mat-divider>
+            <mat-option routerLink="/404">10+</mat-option>
+        </mat-menu>
+    </div>
+    <ng-template #notLogged>
+        <p>Please authenticate yourself in order to book tickets.</p>
+    </ng-template>
   </mat-card-actions>
 </mat-card>
