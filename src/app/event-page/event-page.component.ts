@@ -38,4 +38,8 @@ export class EventPageComponent implements OnInit {
     this.eventService.createTicket("johndoe@cloud.it", this.event.id, n_tickets)
       .subscribe((res) => console.log(res))
   }
+
+  foo(n_tickets) : void {
+    console.log(n_tickets);
+  }
 }
