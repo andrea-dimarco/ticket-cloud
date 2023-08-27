@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { EventService } from '../event.service';
 import { AuthService } from '@auth0/auth0-angular';
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-event-page',
@@ -18,7 +19,8 @@ export class EventPageComponent implements OnInit {
     private route: ActivatedRoute,
     private eventService: EventService,
     private location: Location,
-    public auth: AuthService
+    public auth: AuthService,
+    private _snackBar: MatSnackBar 
   ) {}
 
   ngOnInit(): void {
@@ -36,10 +38,19 @@ export class EventPageComponent implements OnInit {
     // make post request
     this.eventService.createTicket(email, this.event.id, n_tickets)
       .subscribe((res) => console.log(res))
+
+      this.openSnackBar('Enjoy the show!', 'Close', 'my-snackbar');
+  }
+
+  openSnackBar(message: string, action: string, className: string) {
+    this._snackBar.open(message, action, {
+      duration: 0,
+      panelClass: [className]
+    });
   }
 
   foo(n_tickets) : void {
     console.log(n_tickets);
-    console.log(document.getElementById("top-secret").textContent)
+    console.log(document.getElementById("top-secret").textContent);
   }
 }

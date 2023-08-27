@@ -17,4 +17,10 @@
 .top-secret {
     visibility: hidden;
     font-size: xx-small;
+    size: 0em;
+}
+
+.my-snackbar {
+    background: green;
+    color: green;
 }
