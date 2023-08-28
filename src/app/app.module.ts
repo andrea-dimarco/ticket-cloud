@@ -12,6 +12,7 @@ import { AuthButtonComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component'
 import { EventPageComponent } from './event-page/event-page.component';
 import { EventSearchboxComponent } from './components/event-searchbox/event-searchbox.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 // login
@@ -38,7 +39,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     EventPageComponent,
     EventSearchboxComponent,
     PurchaseTicketComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
