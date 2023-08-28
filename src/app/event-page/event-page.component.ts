@@ -34,12 +34,18 @@ export class EventPageComponent implements OnInit {
   }
 
   createTicket(n_tickets) : void {
-    var email = document.getElementById("top-secret").textContent;
-    // make post request
-    this.eventService.createTicket(email, this.event.id, n_tickets)
-      .subscribe((res) => console.log(res))
+    if(this.event.capacity >= n_tickets){
+      var email = document.getElementById("top-secret").textContent;
+      // make post request
+      this.eventService.createTicket(email, this.event.id, n_tickets)
+        .subscribe((res) => console.log(res))
 
-      this.openSnackBar('Enjoy the show!', 'Close', 'my-snackbar');
+        this.openSnackBar('Enjoy the show!', 'Close', 'my-snackbar');
+
+        this.event.capacity = this.event.capacity - n_tickets;
+    } else  {
+      this.openSnackBar('Not enough tickets!!', 'Close', 'my-snackbar');
+    }
   }
 
   openSnackBar(message: string, action: string, className: string) {
@@ -47,10 +53,5 @@ export class EventPageComponent implements OnInit {
       duration: 0,
       panelClass: [className]
     });
-  }
-
-  foo(n_tickets) : void {
-    console.log(n_tickets);
-    console.log(document.getElementById("top-secret").textContent);
   }
 }

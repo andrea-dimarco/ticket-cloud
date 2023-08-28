@@ -11,10 +11,13 @@
 </mat-card-content>
 <mat-card-actions>
     <div *ngIf="auth.user$ | async as user; else notLogged">
+        <!-- do not delete this line!!! -->
         <p #user_email id="top-secret" class="top-secret">{{ user.email }}</p>
+        <!-- button -->
         <button mat-button [disabled]="!auth.isAuthenticated$" class="get-ticket-button" [matMenuTriggerFor]="menu">
             Get Ticket
         </button>
+        <!-- menu -->
         <mat-menu class="my-menu" #menu="matMenu">
             <mat-option (click)="createTicket(1)">1</mat-option>
             <mat-option (click)="createTicket(2)">2</mat-option>
