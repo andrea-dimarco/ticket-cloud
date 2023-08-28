@@ -1,9 +1,9 @@
 <div class="body">
-<mat-card>
+<mat-card class="container">
     <div class="music-category">
     <h2 class="category-name">Music</h2>
     <mat-divider></mat-divider>
-    <mat-grid-list class="custom-grid-list" cols="3" gutterSize="15px">
+    <mat-grid-list class="custom-grid-list" cols="3" gutterSize="30px">
         <mat-grid-tile class="tile-background" *ngFor="let event of music_events">
             <a routerLink="/event-page/{{event.id}}">
             <mat-grid-tile-header class="tile-title">{{event.name}}</mat-grid-tile-header>
@@ -17,23 +17,21 @@
     <div class="sport-category">
         <h2 class="category-name">Sports</h2>
     <mat-divider></mat-divider>
-    <mat-grid-list class="custom-grid-list" cols="3" gutterSize="15px">
-        <mat-grid-list class="custom-grid-list" cols="3" gutterSize="15px">
-            <mat-grid-tile class="tile-background" *ngFor="let event of sport_events">
-                <a routerLink="/event-page/{{event.id}}">
-                <mat-grid-tile-header class="tile-title">{{event.name}}</mat-grid-tile-header>
-                <img class="tile-pic" src={{event.url}} width="1000" height="auto">
-                <mat-grid-tile-footer class="tile-date">{{event.date}}</mat-grid-tile-footer>
-                </a>
-            </mat-grid-tile>
-        </mat-grid-list>
+    <mat-grid-list class="custom-grid-list" cols="3" gutterSize="30px">
+        <mat-grid-tile class="tile-background" *ngFor="let event of sport_events">
+            <a routerLink="/event-page/{{event.id}}">
+            <mat-grid-tile-header class="tile-title">{{event.name}}</mat-grid-tile-header>
+            <img class="tile-pic" src={{event.url}} width="1000" height="auto">
+            <mat-grid-tile-footer class="tile-date">{{event.date}}</mat-grid-tile-footer>
+            </a>
+        </mat-grid-tile>
     </mat-grid-list>
     </div>
 
     <div class="show-category">
         <h2 class="category-name">Show</h2>
         <mat-divider></mat-divider>
-        <mat-grid-list class="custom-grid-list" cols="3" gutterSize="15px">
+        <mat-grid-list class="custom-grid-list" cols="3" gutterSize="30px">
             <mat-grid-tile class="tile-background" *ngFor="let event of show_events">
                 <a routerLink="/event-page/{{event.id}}">
                 <mat-grid-tile-header class="tile-title">{{event.name}}</mat-grid-tile-header>
@@ -47,7 +45,7 @@
     <div class="other-category">
         <h2 class="category-name">Other</h2>
         <mat-divider></mat-divider>
-        <mat-grid-list class="custom-grid-list" cols="3" gutterSize="15px">
+        <mat-grid-list class="custom-grid-list" cols="3" gutterSize="30px">
             <mat-grid-tile class="tile-background" *ngFor="let event of other_events">
                 <a routerLink="/event-page/{{event.id}}">
                 <mat-grid-tile-header class="tile-title">{{event.name}}</mat-grid-tile-header>

@@ -8,10 +8,13 @@
 
 .body {
     box-sizing: border-box;
+    display: block;
 }
 
 .custom-grid-list {
     text-align: center;
+    margin: 0 2rem;
+
 }
 .tile-pic {
     cursor: pointer;
@@ -44,7 +47,7 @@
 
 
 .mat-grid-tile {
-    border-radius: 5px;
+    border-radius: 15px;
     text-align: center;
 }
 .mat-grid-list, hr { 

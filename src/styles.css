@@ -6,9 +6,6 @@
   --tertiary-color: AliceBlue;
 }
 
-body {
-  background-color: var(--tertiary-color);
-}
 /*Reset margins and paddings before modifying*/
 * {
   margin:0;
@@ -16,10 +13,10 @@ body {
 }
 
 body { 
-    margin-left: 5%; 
-    margin-right: 5%;
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
-
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--tertiary-color);
+  max-width: 1450px;
+  margin: 0 auto;
 }
 
 .app-header {
