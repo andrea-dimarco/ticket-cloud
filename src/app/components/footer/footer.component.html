@@ -10,10 +10,12 @@
       *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    --primary-color: DodgerBlue;
+    --secondary-color: GreenYellow;
+    --tertiary-color: AliceBlue;
 }
 body{
-    background: #fcfcfc;
+    background: var(--tertiary-color);
     font-family: sans-serif;
 }
 footer{
@@ -21,12 +23,11 @@ footer{
     bottom: 0;
     left: 0;
     right: 0;
-    background: #111;
+    background: var(--primary-color);
     height: auto;
-    width: 100vw;
 
     padding-top: 40px;
-    color: #fff;
+    color: var(--tertiary-color);
 }
 .footer-content{
     display: flex;
@@ -46,7 +47,7 @@ footer{
     margin: 10px auto;
     line-height: 28px;
     font-size: 14px;
-    color: #cacdd2;
+    color: var(--tertiary-color);
 }
 .socials{
     list-style: none;
@@ -76,14 +77,13 @@ footer{
 
 }
 .socials a:hover i{
-    color: aqua;
+    color: var(--secondary-color);
 }
 
 .footer-bottom{
-    background: #000;
-    width: 100vw;
+    background: rgb(22, 105, 188);
     padding: 20px;
-padding-bottom: 40px;
+    padding-bottom: 40px;
     text-align: center;
 }
 .footer-bottom p{
@@ -93,7 +93,7 @@ float: left;
     text-transform: capitalize;
 }
 .footer-bottom p a{
-  color:#44bae8;
+  color: var(--tertiary-color);
   font-size: 16px;
   text-decoration: none;
 }
@@ -114,11 +114,11 @@ padding-right: 10px;
 display: block;
 }
 .footer-menu ul li a{
-  color: #cfd2d6;
+  color: var(--tertiary-color);
   text-decoration: none;
 }
 .footer-menu ul li a:hover{
-  color: #27bcda;
+  color: var(--secondary-color);
 }
 
 @media (max-width:500px) {
