@@ -15,8 +15,8 @@
 }
 .tile-pic {
     cursor: pointer;
-    width: 150%;
-    height: 150%;
+    width: 120%;
+    height: 120%;
     filter: grayscale(100%);
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -26,8 +26,8 @@
   }
   
 .tile-pic:hover {
-    width: 170%;
-    height: 170%;
+    width: 150%;
+    height: 150%;
     filter: grayscale(0%);
 }
 
