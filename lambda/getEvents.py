@@ -27,7 +27,8 @@ def lambda_handler(event, context):
       'body': json.dumps(new_data, cls=DecimalEncoder),
       'headers': {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        'Cache-Control': 'max-age=43200'
       },
     }
     
