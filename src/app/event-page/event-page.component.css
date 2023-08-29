@@ -26,28 +26,56 @@
 }
 
 .card-inside {
-    padding: 2% 2% 2% 2%;
-    display: inline;
+    margin: 2rem;
 }
+
+.cont-flex {
+    display: flex;
+}
+
+.cont-flex > * {
+    flex-basis: 100%;
+}
+
 .event-header {
-    padding-bottom: 2%;
+    padding: 0;
+    margin: 1rem;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 100%;
+    align-self: center;
+}
+
+.event-image {
+    width: 100%;
 }
 
 .event-title {
     font-size: xx-large;
+    padding: 1rem 1rem;
 }
 
-.event-image {
-    border-radius: 5%;
-    margin-left: 1%;
-}
-
-.event-content {
-    margin-top: 2%;
-}
 .event-description-content {
     line-height: 175%;
 }
+
+.event-content{
+    margin: 1rem;
+    border-radius: 15px;
+}
+
 .event-card-content {
     font-size: large;
+    height: 100%;
+}
+
+
+@media screen and (max-width:1024px) {
+    .cont-flex {
+        flex-direction: column;
+    }
+
+    .event-header {
+        max-width: 600px;
+    }
 }
