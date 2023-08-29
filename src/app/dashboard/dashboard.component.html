@@ -2,7 +2,6 @@
 <mat-card class="container">
     <div class="music-category">
     <h2 class="category-name">Music</h2>
-    <mat-divider></mat-divider>
     <mat-grid-list class="custom-grid-list" cols="3" gutterSize="30px">
         <mat-grid-tile class="tile-background" *ngFor="let event of music_events">
             <a routerLink="/event-page/{{event.id}}">
@@ -12,11 +11,11 @@
             </a>
         </mat-grid-tile>
     </mat-grid-list>
+    <mat-divider></mat-divider>
     </div>
 
     <div class="sport-category">
         <h2 class="category-name">Sports</h2>
-    <mat-divider></mat-divider>
     <mat-grid-list class="custom-grid-list" cols="3" gutterSize="30px">
         <mat-grid-tile class="tile-background" *ngFor="let event of sport_events">
             <a routerLink="/event-page/{{event.id}}">
@@ -26,11 +25,11 @@
             </a>
         </mat-grid-tile>
     </mat-grid-list>
+    <mat-divider></mat-divider>
     </div>
 
     <div class="show-category">
         <h2 class="category-name">Show</h2>
-        <mat-divider></mat-divider>
         <mat-grid-list class="custom-grid-list" cols="3" gutterSize="30px">
             <mat-grid-tile class="tile-background" *ngFor="let event of show_events">
                 <a routerLink="/event-page/{{event.id}}">
@@ -40,11 +39,11 @@
                 </a>
             </mat-grid-tile>
         </mat-grid-list>
+        <mat-divider></mat-divider>
     </div>
     
     <div class="other-category">
         <h2 class="category-name">Other</h2>
-        <mat-divider></mat-divider>
         <mat-grid-list class="custom-grid-list" cols="3" gutterSize="30px">
             <mat-grid-tile class="tile-background" *ngFor="let event of other_events">
                 <a routerLink="/event-page/{{event.id}}">

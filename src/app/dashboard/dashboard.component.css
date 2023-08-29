@@ -1,11 +1,13 @@
 
 .category-name {
-    margin: 10px;
+    margin: 5px;
     text-align: center;
     color: darkslategrey;
     font-weight: bold;
 }
-
+.container {
+    padding-top: 1%;
+}
 .body {
     box-sizing: border-box;
     display: block;
