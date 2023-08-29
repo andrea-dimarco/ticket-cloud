@@ -19,6 +19,7 @@
 
 body { 
   background-color: var(--tertiary-color);
+  background-image: url(https://img.freepik.com/free-vector/white-gray-geometric-pattern-background-vector_53876-136510.jpg?w=1380&t=st=1693293037~exp=1693293637~hmac=2568649aa061823d2b3181d6d6d9dcd5966dc006c5616d042a8cb82b3b590f89);
   max-width: 1450px;
   margin: 0 auto;
 }
