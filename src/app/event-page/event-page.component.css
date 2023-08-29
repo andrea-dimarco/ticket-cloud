@@ -24,3 +24,30 @@
     background-color: green;
     color: green;
 }
+
+.card-inside {
+    padding: 2% 2% 2% 2%;
+    display: inline;
+}
+.event-header {
+    padding-bottom: 2%;
+}
+
+.event-title {
+    font-size: xx-large;
+}
+
+.event-image {
+    border-radius: 5%;
+    margin-left: 1%;
+}
+
+.event-content {
+    margin-top: 2%;
+}
+.event-description-content {
+    line-height: 175%;
+}
+.event-card-content {
+    font-size: large;
+}
