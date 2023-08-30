@@ -9,11 +9,7 @@ import { Event } from '../event';
 })
 export class DashboardComponent {
   events: Event[] = [];
-  sport_events : Event[] = [];
-  music_events : Event[] = [];
-  show_events : Event[] = [];
-  other_events : Event[] = [];
-
+  categories = ["Music", "Sport", "Show", "Other"]
 
   constructor(private eventService: EventService) {}
   ngOnInit(): void {
@@ -25,12 +21,11 @@ export class DashboardComponent {
       this.events = res;
       //console.log(res)
       //console.log(this.events)
-
-      this.sport_events = this.events.filter((el) => el.category == "Sport")
-      this.music_events = this.events.filter((el) => el.category == "Music")
-      this.show_events = this.events.filter((el) => el.category == "Show")
-      this.other_events = this.events.filter((el) => el.category == "Other")  
     })
+  }
+
+  filterEvents(category) {
+    return this.events.filter(event => event.category == category)
   }
 
 }
