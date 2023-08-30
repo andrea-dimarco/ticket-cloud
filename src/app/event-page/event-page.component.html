@@ -1,4 +1,4 @@
-<mat-card class="event-card">
+<mat-card class="event-card" *ngIf="event$ | async; let event">
   <div class="card-inside">
     <mat-card-title class="event-title">{{ event.name }}</mat-card-title>
     <div class="cont-flex">

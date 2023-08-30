@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { EventService } from '../event.service';
 import { AuthService } from '@auth0/auth0-angular';
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-event-page',
@@ -12,7 +13,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
   styleUrls: ['./event-page.component.css']
 })
 export class EventPageComponent implements OnInit {
-  event : Event;
+  event$ : Observable<Event>;
   selected;
 
   constructor(
@@ -29,23 +30,24 @@ export class EventPageComponent implements OnInit {
   
   getEvent(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.eventService.getEvent(id)
-      .subscribe( (event) => this.event = event);
+    this.event$ = this.eventService.getEvent(id)
   }
 
   createTicket(n_tickets) : void {
-    if(this.event.capacity >= n_tickets){
+    this.event$.subscribe( event => {
+    if(event.capacity >= n_tickets){
       var email = document.getElementById("top-secret").textContent;
       // make post request
-      this.eventService.createTicket(email, this.event.id, n_tickets)
+      this.eventService.createTicket(email, event.id, n_tickets)
         .subscribe((res) => console.log(res))
 
         this.openSnackBar('Enjoy the show!', 'Close', 'my-snackbar');
 
-        this.event.capacity = this.event.capacity - n_tickets;
+        event.capacity = event.capacity - n_tickets;
     } else  {
       this.openSnackBar('Not enough tickets!!', 'Close', 'my-snackbar');
     }
+  })
   }
 
   openSnackBar(message: string, action: string, className: string) {
