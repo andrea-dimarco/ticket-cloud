@@ -23,6 +23,7 @@ export class EventSearchboxComponent implements OnInit {
   search(term: string): void {
     this.searchTerms.next(term);
   }
+  
   ngOnInit(): void {
     this.events$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term

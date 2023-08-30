@@ -10,7 +10,8 @@ import { map } from 'rxjs/operators'
 })
 
 export class EventService {
-
+  private events: Observable<Event[]>;
+  private search_result : Event[] | undefined;
   //private eventsUrl = 'https://azuwliobz7.execute-api.us-east-1.amazonaws.com/prod'; // URL to web api
   private eventsUrl = "https://5ces89rrk3.execute-api.us-east-1.amazonaws.com/prod";
   constructor(
@@ -18,14 +19,8 @@ export class EventService {
 
     // GET Events
     getEvents() : Observable<Event[]> {
-      //console.log("Returning events")
-      /** 
-      return this.http.get<Event[]>(this.eventsUrl).pipe(map( (res) => {
-        var events: Event[] = res
-        //console.log(events)
-        return events;
-      }))*/
-      return this.http.get<Event[]>(this.eventsUrl)
+      this.events = this.http.get<Event[]>(this.eventsUrl)
+      return this.events;
     }
 
     // Get Event by ID
@@ -55,7 +50,21 @@ export class EventService {
         // if not search term, return empty hero array.
         return of([]);
       }
-      return this.http.get<Event[]>(`${this.eventsUrl}/?name=${term}`);
+      this.events.pipe(
+        map ((res : Event[]) => {
+          return res.filter((event : Event) => 
+            event.hasOwnProperty('name') && 
+            event['name'].toString().toLowerCase().includes(term.toLowerCase())
+            )
+          })
+        ).subscribe(result => {this.search_result = result})
+      console.log("search term is ", term) 
+      console.log( "result is ", this.search_result)
+      var result = this.search_result
+      this.search_result = undefined
+      return of(result)
+      //this.http.get<Event[]>(`${this.eventsUrl}/?name=${term}`);
+      
     }
 
     // Creates tickets in the Tickets DB
