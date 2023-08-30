@@ -9,7 +9,6 @@ def lambda_handler(event, context):
     user_email = body['user_email']
     n_tickets = body['n_tickets']
     id_event = body['id_event']
-    print(user_email)
     # generate random id
     for i in range(n_tickets):
         # generate ticket id from timestamp and universally unique id

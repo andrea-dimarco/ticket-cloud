@@ -16,7 +16,6 @@ class DecimalEncoder(json.JSONEncoder):
         return json.JSONEncoder.default(self,obj)
 
 def lambda_handler(event, context):
-    # TODO implement
     data = client.scan(
     TableName='Events'
     )
