@@ -3217,7 +3217,7 @@
             </hashTree>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Balanced Book (34-33-33)" enabled="true">
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Balanced Book (34-33-33)" enabled="false">
           <stringProp name="TestPlan.comments">Events get equal amount of requests</stringProp>
         </GenericController>
         <hashTree>
@@ -3699,7 +3699,7 @@
             </hashTree>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Unbalanced Book (80-10-10)" enabled="false">
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Unbalanced Book (80-10-10)" enabled="true">
           <stringProp name="TestPlan.comments">Events get unequal amount of requests</stringProp>
         </GenericController>
         <hashTree>
