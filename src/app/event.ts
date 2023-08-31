@@ -6,4 +6,5 @@ export interface Event {
     url: string;
     description: string;
     capacity: number;
+    available_tickets: number;
 }

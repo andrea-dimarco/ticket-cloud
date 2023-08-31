@@ -23,11 +23,16 @@ export class EventSearchboxComponent implements OnInit {
   search(term: string): void {
     this.searchTerms.next(term);
   }
+  refresh() {
+    setTimeout(() => {
+      window.location.reload();
+    }, 100);
   
+  }
   ngOnInit(): void {
     this.events$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
-      debounceTime(300),
+      debounceTime(500),
 
       // ignore new term if same as previous term
       distinctUntilChanged(),
