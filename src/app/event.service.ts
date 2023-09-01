@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators'
 export class EventService {
   private events$: Observable<Event[]>;
 
-  private eventsUrl = "https://5ces89rrk3.execute-api.us-east-1.amazonaws.com/prod";
+  private eventsUrl = "https://zora0vpn60.execute-api.us-east-1.amazonaws.com/Prod/";
   constructor(
     private http: HttpClient) { 
       this.events$ = this.http.get<Event[]>(this.eventsUrl)
@@ -52,7 +52,7 @@ export class EventService {
 
     }
     getAvailableTickets(id : number) : Observable<any> {
-      const url = `${this.eventsUrl}/events/available_tickets?id=${id}`;
+      const url = `${this.eventsUrl}/events/available-tickets?id=${id}`;
       return this.http.get<Event>(url)
     }
     // Get Events by search term
@@ -73,7 +73,7 @@ export class EventService {
 
     // Creates tickets in the Tickets DB
     createTicket(user_email : string, id_event : number, n_tickets : number) {
-      const url = `https://88xzhyosug.execute-api.us-east-1.amazonaws.com/prod`; // API
+      const url = `https://e83nelpm1j.execute-api.us-east-1.amazonaws.com/Prod`; // API
       const body = {
           "user_email": user_email,
           "n_tickets": n_tickets,
