@@ -5,23 +5,23 @@ import json
 client = boto3.client('dynamodb')
 
 def lambda_handler(event, context):
-    body = json.loads(event['body']) 
+    body = json.loads(event['body'])
     user_email = body['user_email']
     n_tickets = int(body['n_tickets'])
     id_event = int(body['id_event'])
-    # get available tickets 
+    # get available tickets
     data = client.get_item(
       TableName='Events',
       Key = {
           "id": {
               "N": str(id_event)
-          }        
+          }
       }
     )
     available_tickets = int(data['Item']['available_tickets']['N'])
     if (n_tickets <= available_tickets):
       try:
-        # update available tickets 
+        # update available tickets
         update_item = client.update_item(
             TableName='Events',
             Key={'id': {'N': str(id_event) }},

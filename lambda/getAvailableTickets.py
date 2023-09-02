@@ -11,7 +11,7 @@ def lambda_handler(event, context):
         Key = {
             "id": {
                 "N": id
-            }        
+            }
         }
     )
     data = query['Item'].get('available_tickets', {}).get('N')
@@ -24,3 +24,4 @@ def lambda_handler(event, context):
         }
         
     }
+

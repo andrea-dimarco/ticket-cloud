@@ -4,6 +4,7 @@ import boto3
 client = boto3.client('dynamodb')
 
 def lambda_handler(event, context):
+    #return "AAAAAAAAAAAAAAAA", event
     id = event["queryStringParameters"]["id"]
     
     # query on the Table using the GSI
@@ -18,20 +19,20 @@ def lambda_handler(event, context):
     }
     
     # Perform the query
-    query = client.query(**query_params) 
+    query = client.query(**query_params)
     n_tickets = query["Count"]
     data = client.get_item(
         TableName='Events',
         Key = {
             "id": {
                 "N": id
-            }        
+            }
         }
     )
     
-    capacity = int(data['Item']['capacity']['N'])
+    capacity = int(data['Item']['capacity']['S'])
     capacity -= n_tickets
-    data['Item']['capacity']['N'] = str(capacity)
+    data['Item']['capacity']['S'] = str(capacity)
     # TODO implement
     return {
         'statusCode': 200,
