@@ -1,8 +1,8 @@
 ## == TEST TIME == ##
 
 LOW LOAD:
-	- Land:
-	- Book: 
+	- Land: 17:43  2 Set 2023
+	- Book: 18:22  2 Set 2023
 	
 
 MID LOAD:
