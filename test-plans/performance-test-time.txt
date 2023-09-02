@@ -1,0 +1,30 @@
+## == TEST TIME == ##
+
+LOW LOAD:
+	- Land:
+	- Book: 
+	
+
+MID LOAD:
+	- Land:
+	- Book: 
+	
+
+HEAVY LOAD:
+	- Land:
+	- Book: 
+	
+
+STRESS:
+	- Land:
+	- Book: 
+
+
+ENDURANCE:
+	- Land:
+	- Book: 
+
+
+SPIKE:
+	- Land:
+	- Book: 
